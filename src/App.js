@@ -1,4 +1,5 @@
 import "./style.css";
+import { MovieList } from "./MovieList";
 import { useState } from "react";
 export default function App() {
   // const user = [
@@ -68,12 +69,6 @@ export default function App() {
     },
   ];
 
-  // const name = "Sangeetha";
-  // const pic =
-  //   "https://www.teahub.io/photos/full/51-514550_cute-doll-images-for-facebook-profile-cute-doll.jpg";
-  // const name1 = "Suba";
-  // const pic1 =
-  //   "https://cdnaws.sharechat.com/207bd00c-bad4-4c5c-9a5b-93eaaa9f3da0-d0aae533-039f-4c57-805c-b67949635473_compressed_40.jpg";
   return (
     <div className="App">
       {/* <Msg name={name} image={pic} />
@@ -87,104 +82,52 @@ export default function App() {
         <Msg name={name} image={pic} />
       ))} */}
 
-      <section className="movie-list">
-        {movie_list.map((el, index) => (
-          <Movie
-            key={index}
-            name={el.movie_name}
-            pic={el.poster}
-            rating={el.rating}
-            story={el.story}
-          />
-        ))}
-      </section>
+      <MovieList movie_list={movie_list}></MovieList>
+
+      <AddColor />
     </div>
   );
 }
 
-//Hook -> usestate -> hook are function - it will always start with "use"...
-//state - current scenario -> current data - web app
-//const [state, setState] = useState(InitalValue);
-//like - state setState - setLike -> updates like
-function Counter() {
-  // const likes = 1;
-  const [like, setLike] = useState(0);
-  const [dislike, setDislike] = useState(0);
-  return (
-    <div className="counter-container">
-      <button onClick={() => setLike(like + 1)}>
-        <span role="img">👍</span> {like}
-      </button>
-      <button onClick={() => setDislike(dislike + 1)}>👎 {dislike}</button>
-      {/* <p>{like}</p> */}
-    </div>
-  );
-}
-// while import { } sometimes we use
-function Movie({ name, pic, rating, story }) {
-  return (
-    <div className="movie-container">
-      <img src={pic} alt={name} className="movie-poster" />
-      <div className="movie-specs">
-        <h3>{name} </h3>
-        <p>
-          <span role="img" aria-label="star">
-            ⭐ {rating}
-          </span>
-        </p>
-      </div>
-      <p className="movie-summary">{story}</p>
-      <Counter />
-    </div>
-  );
-}
+function AddColor() {
+  const [color, setcolor] = useState("");
+  const style_color = {
+    backgroundColor: color,
+  };
 
-// function
-function Msg({ name, image }) {
-  // const { name } = props;
-  // const { image } = props;
+  // const color = ["pink", "orange", "purple"];
+
+  const [colors, setColors] = useState(["pink", "orange", "purple"]);
   return (
     <div>
-      <img className="profile-pic" src={image} alt={name} />
-      <h2>
-        <span role="img" aria-label="Girl">
-          👧
-        </span>
-        {name} !!!
-      </h2>
+      <input
+        value={color}
+        style={style_color}
+        type="text"
+        placeholder="Enter a color"
+        onChange={(event) => {
+          setcolor(event.target.value);
+          console.log(event.target.value);
+        }}
+      />
+      <button onClick={() => setColors([...colors, color])}>Add Color</button>
+      <p>{color}</p>
+
+      <div className="color_Box">
+        {colors.map((el) => (
+          <ColorBox clr={el} />
+        ))}
+      </div>
     </div>
   );
 }
-//=================================================================
-//Props - Properties
-//Custom Component
-//1. Start with capital Letter...
-//2.it should return jsx
 
-// function Msg(props) {
-//   // const name = "Sangeetha";
-//   // console.log(props);
-//   const { name } = props;
-//   const { image } = props;
-//   return (
-//     <div>
-//       <img width="200px" src={image} alt={name} />
-//       <h2>
-//         <span role="img" aria-label="Girl">
-//           👧
-//         </span>
-//         {props.name} !!!
-//       </h2>
-//     </div>
-//   );
-// }
-
-//==================================================================
-//{} => Template syntax / interpolation(substitution)
-// JSX => javascript XML
-// JSX => js
-// React => document.createElement,document.append
-
-//class is reserved keyword / className
-
-//
+function ColorBox({ clr }) {
+  const color_box_styles = {
+    backgroundColor: clr,
+    height: "130px",
+    width: "130px",
+    margin: "20px 4px",
+  };
+  return <div style={color_box_styles}></div>;
+}
