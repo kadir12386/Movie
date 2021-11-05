@@ -83,6 +83,7 @@ export default function App() {
       ))} */}
 
       <h1>Movies</h1>
+      <p>Sangeetha</p>
       <p>Lorem</p>
       <MovieList movie_list={movie_list}></MovieList>
 
