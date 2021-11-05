@@ -81,7 +81,7 @@ export default function App() {
       {/* {user.map(({ name, pic }) => (
         <Msg name={name} image={pic} />
       ))} */}
-      <h2>gfgydffd hghjsdfh hghjbjsfbg</h2>
+
       <h1>Movies</h1>
       <p>Lorem</p>
       <MovieList movie_list={movie_list}></MovieList>
