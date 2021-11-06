@@ -186,11 +186,11 @@ export default function App() {
 // }
 // ==============================================================================
 
-function AddColor() {
-  const [color, setcolor] = useState("");
-  const style_color = {
-    backgroundColor: color,
-  };
+// function AddColor() {
+//   const [color, setcolor] = useState("");
+//   const style_color = {
+//     backgroundColor: color,
+//   };
 
   // const color = ["pink", "orange", "purple"];
 
