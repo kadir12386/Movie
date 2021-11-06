@@ -4,15 +4,17 @@ import { Movie } from "./Movie";
 export function MovieList(movie) {
   return (
     <section className="movie-list">
-      {movie.movie_list.map((el, index) => (
-        <Movie
-          key={index}
-          name={el.movie_name}
-          pic={el.poster}
-          rating={el.rating}
-          story={el.story}
-        />
-      ))}
+      <div className="movie-list-container">
+        {movie.movie_list.map((el, index) => (
+          <Movie
+            key={index}
+            name={el.movie_name}
+            pic={el.poster}
+            rating={el.rating}
+            story={el.story}
+          />
+        ))}
+      </div>
     </section>
   );
 }

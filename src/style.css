@@ -16,8 +16,9 @@ body {
 }
 .movie-poster {
   height: 500px;
-  width: 340px;
+  width: 300px;
   object-fit: cover;
+  border-radius: 8px;
 }
 .movie-specs {
   display: flex;
@@ -31,7 +32,13 @@ body {
 }
 .movie-container {
   /* background-color: red; */
-  width: 340px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.movie-info {
+  padding: 3px 20px 10px;
+  /* background-color: cadetblue; */
 }
 .movie-rating {
   font-size: 18px;
@@ -39,8 +46,14 @@ body {
 }
 .movie-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  padding: 50px;
+  /* justify-content: center; */
+}
+.movie-list-container {
+  display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
 }
 .counter-container {
@@ -48,10 +61,52 @@ body {
   gap: 10px;
 }
 .counter-container button {
-  font-size: 20px;
+  font-size: 19px;
+  height: 40px;
+  width: 60px;
+  color: #fff;
+  background-color: rgba(13, 118, 204, 0.795);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+.counter-container button:nth-child(2) {
+  color: #fff;
+  background-color: rgba(211, 4, 73, 0.973);
 }
 .color_Box {
   display: flex;
   flex-wrap: wrap;
   background-color: aqua;
+}
+/* movie-form style */
+.movie_form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 10px;
+  padding: 0px 50px;
+}
+.movie_form input {
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid rgba(54, 53, 53, 0.897);
+  font-size: 18px;
+  color: #0a7cfd;
+}
+.movie_form input::placeholder {
+  color: rgb(117, 117, 117);
+}
+.movie_form button {
+  background-color: #1c63b3;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3s;
+}
+.movie_form button:hover {
+  background-color: #4f5255;
 }
