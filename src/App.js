@@ -192,39 +192,39 @@ export default function App() {
 //     backgroundColor: color,
 //   };
 
-  // const color = ["pink", "orange", "purple"];
+//   const color = ["pink", "orange", "purple"];
 
-  const [colors, setColors] = useState(["pink", "orange", "purple"]);
-  return (
-    <div>
-      <input
-        value={color}
-        style={style_color}
-        type="text"
-        placeholder="Enter a color"
-        onChange={(event) => {
-          setcolor(event.target.value);
-          console.log(event.target.value);
-        }}
-      />
-      <button onClick={() => setColors([...colors, color])}>Add Color</button>
-      <p>{color}</p>
+//   const [colors, setColors] = useState(["pink", "orange", "purple"]);
+//   return (
+//     <div>
+//       <input
+//         value={color}
+//         style={style_color}
+//         type="text"
+//         placeholder="Enter a color"
+//         onChange={(event) => {
+//           setcolor(event.target.value);
+//           console.log(event.target.value);
+//         }}
+//       />
+//       <button onClick={() => setColors([...colors, color])}>Add Color</button>
+//       <p>{color}</p>
 
-      <div className="color_Box">
-        {colors.map((el) => (
-          <ColorBox clr={el} />
-        ))}
-      </div>
-    </div>
-  );
-}
+//       <div className="color_Box">
+//         {colors.map((el) => (
+//           <ColorBox clr={el} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
-function ColorBox({ clr }) {
-  const color_box_styles = {
-    backgroundColor: clr,
-    height: "130px",
-    width: "130px",
-    margin: "20px 4px",
-  };
-  return <div style={color_box_styles}></div>;
-}
+// function ColorBox({ clr }) {
+//   const color_box_styles = {
+//     backgroundColor: clr,
+//     height: "130px",
+//     width: "130px",
+//     margin: "20px 4px",
+//   };
+//   return <div style={color_box_styles}></div>;
+// }
