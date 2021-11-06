@@ -1,6 +1,8 @@
 import "./style.css";
 import { MovieList } from "./MovieList";
 import { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 export default function App() {
   // const user = [
   //   {
@@ -92,6 +94,14 @@ export default function App() {
   const [movieRating, setMovieRating] = useState("");
   const [movieDes, setMovieDes] = useState("");
 
+  //rest Form
+  const resetMovieForm = () => {
+    setMovieName("");
+    setMoviePoster("");
+    setMovieRating("");
+    setMovieDes("");
+  };
+
   const addMovie = () => {
     console.log("hello");
     const newMovie = {
@@ -102,6 +112,7 @@ export default function App() {
     };
     console.log([...movies, newMovie], newMovie);
     setMovies([...movies, newMovie]);
+    resetMovieForm();
   };
 
   return (
@@ -115,32 +126,69 @@ export default function App() {
         <Msg name={name} image={pic} />
       ))} */}
       <div className="movie_form">
-        <input
+        <TextField
+          id="outlined-basic"
+          label="Movie Name"
+          variant="outlined"
+          value={movieName}
+          type="text"
+          onChange={(event) => setMovieName(event.target.value)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Movie Poster"
+          variant="outlined"
+          value={moviePoster}
+          type="text"
+          onChange={(event) => setMoviePoster(event.target.value)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Movie Rating"
+          variant="outlined"
+          value={movieRating}
+          type="number"
+          onChange={(event) => setMovieRating(event.target.value)}
+        />
+        <TextField
+          id="outlined-basic"
+          label="Movie descriptiong"
+          variant="outlined"
+          value={movieDes}
+          type="text"
+          onChange={(event) => setMovieDes(event.target.value)}
+        />
+        {/* <input
           value={movieName}
           type="text"
           placeholder="Movie Name"
           onChange={(event) => setMovieName(event.target.value)}
-        />
-        <input
+        /> */}
+        {/* <input
           value={moviePoster}
           type="text"
           onChange={(event) => setMoviePoster(event.target.value)}
           placeholder="Movie Poster"
         />
+        
         <input
           value={movieRating}
           type="number"
           onChange={(event) => setMovieRating(event.target.value)}
           placeholder="Movie Rating"
         />
+       
         <input
           value={movieDes}
           type="text"
           onChange={(event) => setMovieDes(event.target.value)}
           placeholder="Movie description"
-        />
+        /> */}
 
-        <button onClick={addMovie}>Add Movie</button>
+        {/* <button onClick={addMovie}>Add Movie</button> */}
+        <Button variant="contained" onClick={addMovie} color="primary">
+          Add Movie
+        </Button>
       </div>
       <MovieList movie_list={movies}></MovieList>
       {/* <AddColor /> */}

@@ -1,5 +1,4 @@
 import { Counter } from "./Counter.js";
-
 // while import { } sometimes we use
 
 export function Movie({ name, pic, rating, story }) {
