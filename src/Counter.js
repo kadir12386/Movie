@@ -3,8 +3,8 @@
 //const [state, setState] = useState(InitalValue);
 //like - state setState - setLike -> updates like
 import { useState } from "react";
-import Button from "@mui/material/Button";
-
+import IconButton from "@mui/material/IconButton";
+import Badge from "@mui/material/Badge";
 export function Counter() {
   // const likes = 1;
   const [like, setLike] = useState(0);
@@ -14,14 +14,29 @@ export function Counter() {
       {/* <button onClick={() => setLike(like + 1)}>
         <span role="img">👍</span> {like}
       </button> */}
-      <Button onClick={() => setLike(like + 1)} variant="contained">
+      {/* <Button onClick={() => setLike(like + 1)} variant="contained">
         <span role="img">👍</span> {like}
-      </Button>
+      </Button> */}
+      <IconButton aria-label="like" onClick={() => setLike(like + 1)}>
+        <Badge badgeContent={like} color="success">
+          <span role="img">👍</span>
+        </Badge>
+      </IconButton>
 
       {/* <button onClick={() => setDislike(dislike + 1)}>👎 {dislike}</button> */}
-      <Button onClick={() => setDislike(dislike + 1)} variant="contained">
+      <IconButton
+        aria-label="dislike"
+        onClick={() => setDislike(dislike + 1)}
+        variant="contained"
+      >
+        <Badge badgeContent={dislike} color="error">
+          <span role="img">👎 </span>
+        </Badge>
+      </IconButton>
+
+      {/* <Button onClick={() => setDislike(dislike + 1)} variant="contained">
         👎 {dislike}
-      </Button>
+      </Button> */}
       {/* <p>{like}</p> */}
     </div>
   );
