@@ -9,7 +9,7 @@ import Card from "@mui/material/Card";
 
 export function Movie({ name, pic, rating, story }) {
   const [show, setShow] = useState(false);
-  const styles = { display: show ? "block" : "none" };
+  // const styles = { display: show ? "block" : "none" };
   return (
     <Card className="movie-container">
       <img src={pic} alt={name} className="movie-poster" />
