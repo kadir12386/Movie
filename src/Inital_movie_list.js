@@ -61,3 +61,13 @@ export const Inital_movie_list = [
     rating: "9.4",
   },
 ];
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/TcMBFSGVi1c"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>;

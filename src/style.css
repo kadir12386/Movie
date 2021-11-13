@@ -32,14 +32,19 @@ body {
 }
 .movie-container {
   /* background-color: red; */
-  width: 300px;
+  /* width: 300px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 10px; */
+  /* display: flex;
+  /* flex-direction: row;
+  justify-content: center; */
+  width: 300px;
 }
 .movie-info {
   padding: 3px 20px 10px;
   /* background-color: cadetblue; */
 }
+
 .movie-rating {
   font-size: 18px;
   font-weight: 400;
@@ -110,3 +115,6 @@ body {
 /* .movie_form button:hover {
   background-color: #4f5255;
 } */
+.icon-container {
+  margin: 3px 0px 10px;
+}

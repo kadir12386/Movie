@@ -8,6 +8,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import { AddColor } from "./AddColor";
 import { Inital_movie_list } from "./Inital_movie_list";
 import { Redirect } from "react-router";
+import { flexbox } from "@mui/system";
 
 export default function App() {
   //setMovies is used to update the movie array
@@ -65,6 +66,9 @@ export default function App() {
 
       <Switch>
         {/* Each route is case, eg. - case '/about': */}
+        <Route exact path="/">
+          <h1>Welcome to Movie App</h1>
+        </Route>
         <Route path="/films">
           <Redirect to="/Movie" />
         </Route>
@@ -104,48 +108,23 @@ export default function App() {
               type="text"
               onChange={(event) => setMovieDes(event.target.value)}
             />
-            {/* <input
-          value={movieName}
-          type="text"
-          placeholder="Movie Name"
-          onChange={(event) => setMovieName(event.target.value)}
-        /> */}
-            {/* <input
-          value={moviePoster}
-          type="text"
-          onChange={(event) => setMoviePoster(event.target.value)}
-          placeholder="Movie Poster"
-        />
-        
-        <input
-          value={movieRating}
-          type="number"
-          onChange={(event) => setMovieRating(event.target.value)}
-          placeholder="Movie Rating"
-        />
-       
-        <input
-          value={movieDes}
-          type="text"
-          onChange={(event) => setMovieDes(event.target.value)}
-          placeholder="Movie description"
-        /> */}
-
-            {/* <button onClick={addMovie}>Add Movie</button> */}
             <Button variant="contained" onClick={addMovie} color="primary">
               Add Movie
             </Button>
           </div>
+
           <MovieList movie_list={movies}></MovieList>
         </Route>
         <Route path="/AddColor">
           <AddColor />
         </Route>
+
+        <Route path="/movies:id">
+          <h1>detailes</h1>
+        </Route>
+
         <Route path="**">
           <NotFound />
-        </Route>
-        <Route path="/">
-          <h1>Welcome to Movie App</h1>
         </Route>
       </Switch>
 
@@ -155,12 +134,13 @@ export default function App() {
 }
 
 function NotFound() {
-  const style = { width: "100%" };
+  // const style = { width: "100%", display: flex, justifyContent: center };
   return (
     <img
       src="https://i.pinimg.com/originals/cc/4d/aa/cc4daa9d54c97a1badec1f0fd9a327dc.gif"
       alt="Notfound"
-      style={style}
+      className="notfound"
+      // style={style}
     />
   );
 }
